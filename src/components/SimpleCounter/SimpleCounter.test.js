@@ -2,10 +2,20 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import SimpleCounter from './SimpleCounter';
 
+/**
+ * Factory function to create a ShallowWrapper for the SimpleCounter component
+ * @function setup
+ * @param { object } props - Component props specific to this setup
+ * @param { any } state - Initial state for setup
+ * @returns {ShallowWrapper}
+ */
+const setup = (props = {}, state = null) =>
+  shallow(<SimpleCounter {...props} />);
+
 describe('SimpleCounter', () => {
   let component;
   beforeEach(() => {
-    component = shallow(<SimpleCounter />);
+    component = setup();
   });
 
   it('renders without crashing', () => {
@@ -13,12 +23,24 @@ describe('SimpleCounter', () => {
     // expect(component).toMatchSnapshot();
   });
 
-  it('renders one increment button', () => {
-    expect(component.find('button').length).toBe(1);
+  describe('SimpleCounter button', () => {
+    it('renders one increment button', () => {
+      expect(component.find('button').length).toBe(1);
+    });
+
+    it('has text reading "Click Me"', () => {
+      expect(component.find('button').text()).toBe('Click Me');
+    });
   });
 
-  it('renders counter display', () => {
-    expect(component.find('.counter').length).toBe(1);
+  describe('SimpleCounter display', () => {
+    it('renders a div with class counter', () => {
+      expect(component.find('div.counter').length).toBe(1);
+    });
+
+    it('displays text as 0', () => {
+      expect(component.find('div.counter').text()).toBe('0');
+    });
   });
 
   describe('SimpleCounter state', () => {
@@ -26,6 +48,9 @@ describe('SimpleCounter', () => {
       expect(component.state('counter')).toBe(0);
     });
 
-    it('increments counter display on click', () => {});
+    it('increments counter display on click', () => {
+      component.find('button').simulate('click');
+      expect(component.state('counter')).toBe(1);
+    });
   });
 });
