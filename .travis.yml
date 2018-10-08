@@ -1,18 +1,18 @@
 language: node_js
 node_js:
-  - "stable"
+  - 'stable'
 cache:
   directories:
-  - node_modules
+    - node_modules
 script:
   - npm test
   - npm run build
-
 deploy:
-  provider: pages
+  provider: surge
   skip_cleanup: true
-  github_token: $github_token
-  local_dir: build
-  keep-history: true
-  on:
-    branch: master
+  domain: click-counter.surge.sh
+  project: ./build/
+after_success:
+  - surge --project ./build --domain click-counter.surge.sh  
+on:
+  branch: master

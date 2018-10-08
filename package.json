@@ -2,7 +2,10 @@
   "name": "click-counter",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dankreiger.github.io/click-counter/",
+  "homepage": "https://click-counter.surge.sh/",
+  "repository": "https://github.com/dankreiger/click-counter.git",
+  "license": "MIT",
+  "author": "Dan Kreiger <dan@dankreiger.com> (http://www.dankreiger.com)",
   "dependencies": {
     "classnames": "2.2.6",
     "react": "^16.5.2",
@@ -20,9 +23,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,7 +40,8 @@
     "gh-pages": "^2.0.1",
     "husky": "1.1.1",
     "lint-staged": "7.3.0",
-    "prettier": "1.14.3"
+    "prettier": "1.14.3",
+    "surge": "0.20.1"
   },
   "husky": {
     "hooks": {
