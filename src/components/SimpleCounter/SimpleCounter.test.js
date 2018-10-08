@@ -41,6 +41,11 @@ describe('SimpleCounter', () => {
     it('displays text as 0', () => {
       expect(component.find('div.counter').text()).toBe('0');
     });
+
+    it('displays text as 1 after button click', () => {
+      component.find('button').simulate('click');
+      expect(component.find('div.counter').text()).toBe('1');
+    });
   });
 
   describe('SimpleCounter state', () => {
