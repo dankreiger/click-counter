@@ -2,6 +2,7 @@
   "name": "click-counter",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://dankreiger.github.io/click-counter/",
   "dependencies": {
     "classnames": "2.2.6",
     "react": "^16.5.2",
@@ -18,7 +19,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "CI=true react-scripts test --env=jsdom",
+    "test:coverage": "npm test -- --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
