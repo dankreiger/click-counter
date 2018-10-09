@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { SimpleCounterContainer } from './styles';
+import { printMessage } from './helpers';
 
 class SimpleCounter extends Component {
   constructor(props) {
@@ -15,9 +16,7 @@ class SimpleCounter extends Component {
     const { counter } = this.state;
     return (
       <SimpleCounterContainer>
-        <div className="counter">{`This button has been clicked ${counter} ${
-          counter === 1 ? 'time' : 'times'
-        }`}</div>
+        <div className="counter">{printMessage(counter)}</div>
         <button onClick={this.handleClick}>Click Me</button>
       </SimpleCounterContainer>
     );
