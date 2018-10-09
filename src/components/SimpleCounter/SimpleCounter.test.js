@@ -39,12 +39,16 @@ describe('SimpleCounter', () => {
     });
 
     it('displays text as 0', () => {
-      expect(component.find('div.counter').text()).toBe('0');
+      expect(component.find('div.counter').text()).toBe(
+        'This button has been clicked 0 times'
+      );
     });
 
     it('displays text as 1 after button click', () => {
       component.find('button').simulate('click');
-      expect(component.find('div.counter').text()).toBe('1');
+      expect(component.find('div.counter').text()).toBe(
+        'This button has been clicked 1 time'
+      );
     });
   });
 

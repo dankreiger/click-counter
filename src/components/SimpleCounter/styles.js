@@ -5,7 +5,7 @@ export const SimpleCounterContainer = styled.div`
   flex-direction: column;
   align-items: center;
   .counter {
-    font-size: 72px;
+    font-size: 52px;
     margin-bottom: 20px;
     color: #fff;
     text-shadow: 0px 0px 4px #999;
@@ -13,11 +13,11 @@ export const SimpleCounterContainer = styled.div`
   button {
     border: none;
     border-radius: 2px;
-    padding: 12px 18px;
+    padding: 22px 28px;
     font-size: 2em;
     text-transform: uppercase;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 32px;
     background-position: center;
     transition: background 0.8s;
     color: #fff;

@@ -15,7 +15,9 @@ class SimpleCounter extends Component {
     const { counter } = this.state;
     return (
       <SimpleCounterContainer>
-        <div className="counter">{counter}</div>
+        <div className="counter">{`This button has been clicked ${counter} ${
+          counter === 1 ? 'time' : 'times'
+        }`}</div>
         <button onClick={this.handleClick}>Click Me</button>
       </SimpleCounterContainer>
     );
